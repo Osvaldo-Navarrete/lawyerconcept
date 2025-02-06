@@ -1,0 +1,11 @@
+@mixin autogrid-template {
+    display: grid;
+    gap: 5rem;
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+@mixin shadow1 {
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.359);
+}

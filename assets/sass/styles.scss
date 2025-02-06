@@ -1,0 +1,144 @@
+@import 'colors';
+@import 'fonts';
+@import 'botones';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'afacad', serif;
+}
+
+body {
+    color: $font-color;
+    min-height: 100vh;
+    background-image: url(../imagenes/fondo1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    ul li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: $font-color;
+    }
+
+    h1 {
+        font-size: $font-title;
+    }
+
+    h2 {
+        font-size: $font-subtitle;
+    }
+
+    h3 {
+        font-size: $font-h3;
+    }
+
+    p {
+        font-size: $font-text;
+    }
+}
+
+.grid__container {
+    display: grid;
+    grid-template:
+        "header"
+        "first__section"
+        "second__section"
+        "third__section"
+        "footer";
+
+
+    .header {
+        @include glassmorphism;
+        border: none;
+        grid-area: header;
+        width: 100%;
+        min-height: 5rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        @include shadow1;
+
+        img {
+            width: 2rem;
+        }
+
+        .nav__list {
+            display: flex;
+            gap: 4rem;
+        }
+    }
+
+    .first__section {
+        /*min-height: 100vh;*/
+        grid-area: first__section;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+
+        .main__content {
+            @include glassmorphism;
+            @include shadow1;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            padding: 2rem;
+
+
+            .materias__list {
+                @include autogrid-template;
+
+                .item__mat {
+                    @include cards-glass;
+                    color: $cuaternary-color;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+
+                    img {
+                        width: 100%;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .second__section {
+        @include glassmorphism;        
+        grid-area: second__section;
+        background-color: $cuaternary-color;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .third__section {
+        grid-area: third__section;
+        background-color: blue;
+        width: 100%;
+    }
+
+    .footer {
+        grid-area: footer;
+        background-color: orange;
+        width: 100%;
+    }
+}
+
