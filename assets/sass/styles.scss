@@ -1,6 +1,6 @@
 @import 'colors';
 @import 'fonts';
-@import 'botones';
+@import 'cardsnbuttons';
 
 * {
     margin: 0;
@@ -11,6 +11,7 @@
 
 body {
     color: $font-color;
+    font-weight: 600;
     min-height: 100vh;
     background-image: url(../imagenes/fondo1.png);
     background-position: center;
@@ -78,13 +79,13 @@ body {
     }
 
     .first__section {
-        /*min-height: 100vh;*/
+        min-height: 100vh;
         grid-area: first__section;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
+        padding: 20px;
 
         .main__content {
             @include glassmorphism;
@@ -96,23 +97,21 @@ body {
             width: 100%;
             padding: 2rem;
 
-
             .materias__list {
                 @include autogrid-template;
 
                 .item__mat {
                     @include cards-glass;
+                    @include flexing-objects;
                     color: $cuaternary-color;
                     border-radius: 10px;
-                    padding: 1rem;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    padding-bottom: 1rem;
                     gap: 1rem;
+                    overflow: hidden;
 
                     img {
                         width: 100%;
-                        border-radius: 10px;
+
                     }
                 }
             }
@@ -120,13 +119,39 @@ body {
     }
 
     .second__section {
-        @include glassmorphism;        
+        background-color: $primary-color;
+        border: none;
         grid-area: second__section;
-        background-color: $cuaternary-color;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        padding: 20px;
+
+        .ubicacion__container {
+            border-radius: 10px;
+            width: 100%;
+
+
+            .datos__list1,
+            .datos__list2,
+            .datos__list3 {
+                padding: 2rem;
+                @include autogrid-template;
+
+                .item__ubi {
+                    @include flexing-objects;
+                    width: 100%;
+                }
+            }
+            .datos__list2{
+                @include autogrid-template;
+                padding-bottom: 6rem;
+                .item__ubi{
+                    img{
+                        border-radius: 16px;
+                    }
+                }
+            }
+
+        }
     }
 
     .third__section {
@@ -142,3 +167,25 @@ body {
     }
 }
 
+
+/*.ubicacion__container {
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            padding: 2rem;
+            
+
+            .datos__list {
+                @include autogrid-template;
+
+                
+                .item__ubi{
+                    width: 100%;
+                    display:flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+*/

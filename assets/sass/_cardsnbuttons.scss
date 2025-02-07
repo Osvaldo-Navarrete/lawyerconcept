@@ -1,0 +1,23 @@
+
+/*Autofill agrega un espacio cuando no hay suficientes elementos 
+Y autofit hace que los elementos se expandan hasta cubrir el espacio.*/
+@mixin autogrid-template {
+    display: grid;
+    gap: 5rem;
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    /*You can use too: 
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    */
+}
+
+@mixin shadow1 {
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.359);
+}
+
+@mixin flexing-objects{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}

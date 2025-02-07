@@ -1,3 +1,5 @@
+/*Autofill agrega un espacio cuando no hay suficientes elementos 
+Y autofit hace que los elementos se expandan hasta cubrir el espacio.*/
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +9,7 @@
 
 body {
   color: #CBDDEC;
+  font-weight: 600;
   min-height: 100vh;
   background-image: url(../imagenes/fondo1.png);
   background-position: center;
@@ -63,13 +66,13 @@ body p {
   gap: 4rem;
 }
 .grid__container .first__section {
-  /*min-height: 100vh;*/
+  min-height: 100vh;
   grid-area: first__section;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 20px;
 }
 .grid__container .first__section .main__content {
   background: rgba(24, 39, 55, 0.93);
@@ -90,7 +93,10 @@ body p {
   gap: 5rem;
   grid-auto-flow: dense;
   grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  /*You can use too: 
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  */
 }
 .grid__container .first__section .main__content .materias__list .item__mat {
   background: rgba(255, 255, 255, 0.5);
@@ -99,30 +105,63 @@ body p {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgb(255, 255, 255);
-  color: #001412;
-  border-radius: 10px;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #001715;
+  border-radius: 10px;
+  padding-bottom: 1rem;
   gap: 1rem;
+  overflow: hidden;
 }
 .grid__container .first__section .main__content .materias__list .item__mat img {
   width: 100%;
-  border-radius: 10px;
 }
 .grid__container .second__section {
-  background: rgba(24, 39, 55, 0.93);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: #182737;
+  border: none;
   grid-area: second__section;
-  background-color: #001412;
   width: 100%;
+  padding: 20px;
+}
+.grid__container .second__section .ubicacion__container {
+  border-radius: 10px;
+  width: 100%;
+}
+.grid__container .second__section .ubicacion__container .datos__list1,
+.grid__container .second__section .ubicacion__container .datos__list2,
+.grid__container .second__section .ubicacion__container .datos__list3 {
+  padding: 2rem;
+  display: grid;
+  gap: 5rem;
+  grid-auto-flow: dense;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  /*You can use too: 
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  */
+}
+.grid__container .second__section .ubicacion__container .datos__list1 .item__ubi,
+.grid__container .second__section .ubicacion__container .datos__list2 .item__ubi,
+.grid__container .second__section .ubicacion__container .datos__list3 .item__ubi {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+}
+.grid__container .second__section .ubicacion__container .datos__list2 {
+  display: grid;
+  gap: 5rem;
+  grid-auto-flow: dense;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  /*You can use too: 
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  */
+  padding-bottom: 6rem;
+}
+.grid__container .second__section .ubicacion__container .datos__list2 .item__ubi img {
+  border-radius: 16px;
 }
 .grid__container .third__section {
   grid-area: third__section;
@@ -134,5 +173,27 @@ body p {
   background-color: orange;
   width: 100%;
 }
+
+/*.ubicacion__container {
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            padding: 2rem;
+
+
+            .datos__list {
+                @include autogrid-template;
+
+
+                .item__ubi{
+                    width: 100%;
+                    display:flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+*/
 
 /*# sourceMappingURL=styles.css.map */
