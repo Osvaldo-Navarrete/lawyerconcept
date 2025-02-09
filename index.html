@@ -22,7 +22,7 @@
 <body class="grid__container">
     <header class="header" id="header">
         <a href="#first-section" class="nav__logo">
-            <img src="assets/imagenes/favicon.png" class="nav__logo-img" />
+            <img src="assets/imagenes/favicon.ico" class="nav__logo-img" />
         </a>
         <div class="nav__menu" id="nav-menu">
             <input type="checkbox" id="check">
@@ -37,7 +37,7 @@
                     <a href="#second-section" class="nav__link">UBICACIÓN</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#valores" class="nav__link">VALORES</a>
+                    <a href="#inter-section" class="nav__link">VALORES</a>
                 </li>
                 <li class="nav__item">
                     <a href="#third-section" class="nav__link">CONTACTO</a>
@@ -54,7 +54,6 @@
             <div class="materia__container" id="materia-container">
                 <ul class="materias__list" id="materias-list">
                     <li class="item__mat" id="item-mat">
-
                         <img src="assets/imagenes/laboral.png" alt="">
                         <p>Laboral</p>
                     </li>
@@ -88,15 +87,15 @@
                     <div class="datos__ubicacion" id="datos-ubicacion">
                         <ul class="datos__list2" id="datos-list">
                             <li class="item__ubi" id="item-ubi">
-                                <img src="assets/imagenes/acapulco.png" alt="">
+                                <img src="assets/imagenes/acapulco.png" alt=""><br>
                                 <p>Acapulco</p>
                             </li>
                             <li class="item__ubi" id="item-ubi">
-                                <img src="assets/imagenes/chilpancingo.png" alt="">
+                                <img src="assets/imagenes/chilpancingo.png" alt=""><br>
                                 <p>Chilpancingo</p>
                             </li>
                             <li class="item__ubi" id="item-ubi">
-                                <img src="assets/imagenes/zihuatanejo.png" alt="">
+                                <img src="assets/imagenes/zihuatanejo.png" alt=""><br>
                                 <p>Zihuatanejo</p>
                             </li>
                         </ul>
@@ -119,26 +118,40 @@
                             <h3>Será un placer recibirle y asistirle en sus requerimientos legales.</h3>
                         </li>
                     </ul>
-                    <h1 id="valores">Valores</h1>
-                    <ul class="datos__list4" id="datos-list">
-                        <li class="item__ubi" id="item-ubi">
-                            <h2>Honestidad</h2>
-                        </li>
-                        <li class="item__ubi" id="item-ubi">
-                            <h2>Responsabilidad</h2>
-                        </li>
-                        <li class="item__ubi" id="item-ubi">
-                            <h2>Ética</h2>
-                        </li>
-                        <li class="item__ubi" id="item-ubi">
-                            <h2>Profesionalismo</h2>
-                        </li>
-                        <li class="item__ubi" id="item-ubi">
-                            <h2>Eficiencia</h2>
-                        </li>
-                    </ul>
+
                 </div>
             </div>
+    </section>
+
+    <section class="inter__section" id="inter-section">
+        <h1 id="valores">Valores</h1>
+        <ul class="datos__list4" id="datos-list">
+            <li class="item__ubi" id="item-ubi" style="overflow: hidden;">
+                <img src="assets/imagenes/imgvalores.png"
+                    style="width: 189px; height: 200px; object-fit: cover; object-position: 0% 0%;" alt=""><br>
+                <h2>Honestidad</h2>
+            </li>
+            <li class="item__ubi" id="item-ubi">
+                <img src="assets/imagenes/imgvalores.png"
+                    style="width: 196px; height: 200px; object-fit: cover; object-position: 23.5% 0%;" alt=""><br>
+                <h2>Responsabilidad</h2>
+            </li>
+            <li class="item__ubi" id="item-ubi">
+                <img src="assets/imagenes/imgvalores.png"
+                    style="width: 200px; height: 200px; object-fit: cover; object-position: 48.25% 0%;" alt=""><br>
+                <h2>Ética</h2>
+            </li>
+            <li class="item__ubi" id="item-ubi">
+                <img src="assets/imagenes/imgvalores.png"
+                    style="width: 219px; height: 200px; object-fit: cover; object-position: 75.14% 0%;" alt=""><br>
+                <h2>Profesionalismo</h2>
+            </li>
+            <li class="item__ubi" id="item-ubi">
+                <img src="assets/imagenes/imgvalores.png"
+                    style="width: 200px; height: 200px; object-fit: cover; object-position: 100.7% 0%;" alt=""><br>
+                <h2>Eficiencia</h2>
+            </li>
+        </ul>
     </section>
 
     <section class="third__section" id="third-section">
@@ -195,10 +208,17 @@
         </div>
     </footer>
     <div class="copyright" id="copyright">
-        <p>Lic. Iván Navarrete Cotino &copy 2025 - <span id="fecha-copy">2025</span></p>
+        <p>Lic. Iván Navarrete Cotino &copy 2025 - <span id="fecha-copy">Year</span></p>
     </div>
 
+
+    <a href="#" class="scrollup" id="scroll-up">
+        <box-icon type='solid' name='up-arrow-square' color='#2b6dd7'></box-icon>
+    </a>
+    <!--Scroll para que se revelen los elementos de forma suave-->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <!--Animated icons-->
+    <script src="assets/js/app.js"></script>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 

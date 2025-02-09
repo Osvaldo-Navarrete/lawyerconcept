@@ -5,6 +5,7 @@ Y autofit hace que los elementos se expandan hasta cubrir el espacio.*/
   padding: 0;
   box-sizing: border-box;
   font-family: "afacad", serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -38,7 +39,7 @@ body p {
 
 .grid__container {
   display: grid;
-  grid-template: "header" "first__section" "second__section" "third__section" "footer" "copyright";
+  grid-template: "header" "first__section" "second__section" "inter__section" "third__section" "footer" "copyright";
 }
 .grid__container .header {
   background: rgba(24, 39, 55, 0.93);
@@ -65,6 +66,30 @@ body p {
   display: flex;
   gap: 4rem;
 }
+.grid__container .header .nav__list .nav__item {
+  transition: all 0.2s ease-in-out;
+  /* Active link */
+}
+.grid__container .header .nav__list .nav__item .active-link {
+  position: relative;
+  border-bottom: 1px solid #CBDDEC;
+  opacity: 0.7;
+}
+.grid__container .header .nav__list .nav__item .active-link::before {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  left: 45%;
+  width: 5px;
+  height: 5px;
+  background-color: #CBDDEC;
+  border-radius: 50%;
+}
+.grid__container .header .nav__list .nav__item:hover a {
+  transition: all 0.2s ease-in-out;
+  opacity: 0.5;
+  border: #CBDDEC;
+}
 .grid__container .header .checkbtn {
   display: none;
 }
@@ -83,7 +108,7 @@ body p {
     position: absolute;
     left: -100%;
     width: 100%;
-    transition: all 0.69s;
+    transition: all 0.7s;
     display: block;
     line-height: 4rem;
     text-align: center;
@@ -147,9 +172,15 @@ body p {
   padding-bottom: 1rem;
   gap: 1rem;
   overflow: hidden;
+  transition: 0.5s ease-in-out;
 }
 .grid__container .first__section .main__content .materias__list .item__mat img {
   width: 100%;
+}
+.grid__container .first__section .main__content .materias__list .item__mat:hover {
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 0.5em 1em -0.4em #CBDDEC;
+  transform: translateY(-1em);
 }
 .grid__container .second__section {
   background-color: #182737;
@@ -191,20 +222,54 @@ body p {
   width: 100%;
 }
 .grid__container .second__section .ubicacion__container .datos__list2,
-.grid__container .second__section .ubicacion__container .datos__list3,
-.grid__container .second__section .ubicacion__container .datos__list4 {
+.grid__container .second__section .ubicacion__container .datos__list3 {
   padding-bottom: 6rem;
 }
+.grid__container .second__section .ubicacion__container .datos__list2 .item__ubi,
+.grid__container .second__section .ubicacion__container .datos__list3 .item__ubi {
+  transition: 0.5s ease-in-out;
+}
 .grid__container .second__section .ubicacion__container .datos__list2 .item__ubi img,
-.grid__container .second__section .ubicacion__container .datos__list3 .item__ubi img,
-.grid__container .second__section .ubicacion__container .datos__list4 .item__ubi img {
+.grid__container .second__section .ubicacion__container .datos__list3 .item__ubi img {
+  transition: 0.5s ease-in-out;
   border-radius: 16px;
 }
-.grid__container .second__section .ubicacion__container .datos__list4 {
-  padding-bottom: 10rem;
+.grid__container .second__section .ubicacion__container .datos__list2 .item__ubi img:hover,
+.grid__container .second__section .ubicacion__container .datos__list3 .item__ubi img:hover {
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 0.5em 1em -0.4em #CBDDEC;
+  transform: translateY(-1em);
 }
-.grid__container .second__section .ubicacion__container .datos__list4 li {
-  border-bottom: 1px solid whitesmoke;
+.grid__container .inter__section {
+  grid-area: inter__section;
+  background-color: #182737;
+}
+.grid__container .inter__section h1 {
+  text-align: center;
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+}
+.grid__container .inter__section .datos__list4 {
+  padding: 4rem;
+  display: grid;
+  gap: 5rem;
+  grid-auto-flow: dense;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  /*You can use too: 
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  */
+}
+.grid__container .inter__section .datos__list4 .item__ubi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.grid__container .inter__section .datos__list4 {
+  user-select: none;
+  pointer-events: none;
+  padding-bottom: 10rem;
 }
 .grid__container .third__section {
   background: rgba(24, 39, 55, 0.93);
@@ -265,26 +330,20 @@ body p {
   font-size: 1.2rem;
 }
 
-/*.ubicacion__container {
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            padding: 2rem;
+.scrollup {
+  position: fixed;
+  background: #CBDDEC;
+  right: 1rem;
+  bottom: -20%;
+  display: flex;
+  padding: 0.3rem;
+  border-radius: 0.25rem;
+  transition: 0.4s;
+}
 
-
-            .datos__list {
-                @include autogrid-template;
-
-
-                .item__ubi{
-                    width: 100%;
-                    display:flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-            }
-*/
+/* Show Scroll Up*/
+.show-scroll {
+  bottom: 3rem;
+}
 
 /*# sourceMappingURL=styles.css.map */
